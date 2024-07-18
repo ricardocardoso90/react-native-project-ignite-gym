@@ -7,13 +7,34 @@ import { AuthNavigatorRoutesProps } from "@routes/auth.routes";
 import { Input } from "@components/Input";
 import { Button } from "@components/Button";
 import { useNavigation } from "@react-navigation/native";
+import { Controller, useForm } from "react-hook-form";
+
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+
+type FormaDataProps = {
+  email: string;
+  password: string;
+};
+
+const signInSchema = yup.object({
+  email: yup.string().required('Informe o E-mail'),
+  password: yup.string().required('Informe a senha')
+});
 
 export function SignIn() {
-  const navigation = useNavigation<AuthNavigatorRoutesProps>();
+  const { control, handleSubmit, formState: { errors } } = useForm<FormaDataProps>({
+    resolver: yupResolver(signInSchema)
+  });
 
+  const navigation = useNavigation<AuthNavigatorRoutesProps>();
   function handleSignUp() {
     navigation.navigate("signUp");
   };
+
+  function handleSignIn(data: FormaDataProps) {
+    console.log(data);
+  }
 
   return (
     <ScrollView
@@ -47,18 +68,51 @@ export function SignIn() {
             Acesse sua conta
           </Heading>
 
-          <Input
-            placeholder="E-mail"
-            keyboardType="email-address"
-            autoCapitalize="none"
+          <Controller
+            control={control}
+            name="email"
+            // rules={{
+            //   required: "Informe o E-mail",
+            // }}
+            render={({ field: { onChange, value } }) => (
+              <Input
+                placeholder="E-mail"
+                keyboardType="email-address"
+                autoCapitalize="none"
+                onChangeText={onChange}
+                value={value}
+                errorMessage={errors.email?.message}
+              />
+            )}
           />
 
-          <Input
-            placeholder="Senha"
-            secureTextEntry
+          {/* <Text color="red.500">{errors.email?.message}</Text> */}
+
+          <Controller
+            control={control}
+            name="password"
+            // rules={{
+            //   required: "Digite a senha"
+            // }}
+            render={({ field: { onChange, value } }) => (
+              <Input
+                placeholder="Senha"
+                secureTextEntry
+                onChangeText={onChange}
+                value={value}
+                returnKeyType="send"
+                onSubmitEditing={handleSubmit(handleSignIn)}
+                errorMessage={errors.password?.message}
+              />
+            )}
           />
 
-          <Button title="Acessar" />
+          {/* <Text color="red.500">{errors.password?.message}</Text> */}
+
+          <Button
+            title="Acessar"
+            onPress={handleSubmit(handleSignIn)}
+          />
         </Center>
 
         <Center px={10} mt={20}>

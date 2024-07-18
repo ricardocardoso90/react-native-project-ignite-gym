@@ -62,7 +62,7 @@ export function SignUp() {
           position="absolute"
         />
 
-        <Center my={16}>
+        <Center my={12}>
           <LogoSvg />
           <Text color="gray.100" fontSize="sm">
             Treine sua mente e o seu corpo
