@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Alert, TouchableOpacity } from "react-native";
+import { TouchableOpacity } from "react-native";
 import { Center, Heading, ScrollView, Skeleton, Text, useToast, VStack } from "native-base";
 
 import { ScreenHeader } from "@screens/ScreenHeader";
