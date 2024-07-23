@@ -5,6 +5,7 @@ import { useFonts, Roboto_400Regular, Roboto_700Bold, } from "@expo-google-fonts
 import { THEME } from "src/theme";
 import { Loading } from "@components/Loading";
 import { Routes } from "@routes/index";
+import { AuthContextProvider } from "@contexts/AuthContext";
 
 export default function Index() {
   const [fontsLoaded] = useFonts({ Roboto_400Regular, Roboto_700Bold });
@@ -18,10 +19,12 @@ export default function Index() {
         translucent
       />
 
-      {fontsLoaded
-        ? <Routes />
-        : <Loading />
-      }
+      <AuthContextProvider>
+        {fontsLoaded
+          ? <Routes />
+          : <Loading />
+        };
+      </AuthContextProvider >
 
     </NativeBaseProvider>
   );
