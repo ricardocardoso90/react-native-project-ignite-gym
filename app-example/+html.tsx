@@ -10,5 +10,5 @@ export default function Root({ children }: PropsWithChildren) {
       </head>
       <body>{children}</body>
     </html>
-  );
+  )
 }

@@ -23,7 +23,7 @@ export default function Index() {
         {fontsLoaded
           ? <Routes />
           : <Loading />
-        };
+        }
       </AuthContextProvider >
 
     </NativeBaseProvider>

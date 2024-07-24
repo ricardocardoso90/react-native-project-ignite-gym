@@ -4,10 +4,14 @@ import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
 import { AuthRoutes } from "./auth.routes";
 import { AppRoutes } from "./app.routes";
 import { useState } from "react";
+import { useAuth } from "@hooks/useAuth";
 
 export function Routes() {
   const { colors } = useTheme();
   const [isLogged, setIsLogged] = useState(false);
+
+  const { user } = useAuth();
+  console.log(user);
 
   const theme = DefaultTheme;
   theme.colors.background = colors.gray[700];
