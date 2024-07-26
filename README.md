@@ -4,13 +4,12 @@
 
 - [Expo]()
 - [Typescript]()
-- [ReactJS]()
-- [NativeBase]()
-- [expo-google-fonts/roboto]()
+- [React Native]()
+- [Native Base]()
 - [Axios]()
 - [Yup]()
 - [React Hook Form]()
-- [React Nativation]()
+- [React Navigation]()
 
 ## Instalação:
 
