@@ -41,7 +41,6 @@ export function SignIn() {
   };
 
   async function handleSignIn({ email, password }: FormaDataProps) {
-
     try {
       setIsLoading(true);
       await signIn(email, password);
@@ -50,7 +49,7 @@ export function SignIn() {
       const isAppError = error instanceof AppError;
       const title = isAppError
         ? error.message
-        : 'Não foi possível entrar. Tente novamente mais tarde!'
+        : 'Não foi possível entrar. Tente novamente mais tarde!';
 
       setIsLoading(false);
       toast.show({
@@ -59,7 +58,6 @@ export function SignIn() {
         bgColor: 'red.500'
       });
     };
-
   };
 
   return (

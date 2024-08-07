@@ -11,18 +11,18 @@ import HistorySvg from "@assets/history.svg";
 import ProfileSvg from "@assets/profile.svg";
 import { Platform } from "react-native";
 
-type AppRoutes = {
+type AppRoutesProps = {
   home: undefined;
   history: undefined;
   profile: undefined;
-  exercise: undefined;
+  exercise: {exerciseId: string};
 };
 
-export type AppNavigatorRoutesProp = BottomTabNavigationProp<AppRoutes>;
+export type AppNavigatorRoutesProp = BottomTabNavigationProp<AppRoutesProps>;
 
 export function AppRoutes() {
   const { sizes, colors } = useTheme();
-  const { Screen, Navigator } = createBottomTabNavigator<AppRoutes>();
+  const { Screen, Navigator } = createBottomTabNavigator<AppRoutesProps>();
 
   return (
     <Navigator screenOptions={{
