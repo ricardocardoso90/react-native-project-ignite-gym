@@ -21,8 +21,13 @@ type FormaDataProps = {
 };
 
 const signInSchema = yup.object({
-  email: yup.string().required('Informe o E-mail'),
-  password: yup.string().required('Informe a senha')
+  email:
+    yup.string()
+      .required('Informe o E-mail'),
+
+  password:
+    yup.string()
+      .required('Informe a senha')
 });
 
 export function SignIn() {

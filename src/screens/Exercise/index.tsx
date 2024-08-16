@@ -51,7 +51,7 @@ export function Exercise() {
       });
     } finally {
       setIsLoading(false);
-    }
+    };
   };
 
   async function handleExerciseHistoryRegister() {

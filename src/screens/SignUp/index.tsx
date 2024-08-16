@@ -23,20 +23,24 @@ type FormDataProps = {
 };
 
 const signUpSchema = yup.object({
-  name: yup.string()
-    .required('Informe o nome.'),
+  name:
+    yup.string()
+      .required('Informe o nome.'),
 
-  email: yup.string()
-    .required('Informe o e-mail.')
-    .email('E-mail inválido.'),
+  email:
+    yup.string()
+      .required('Informe o e-mail.')
+      .email('E-mail inválido.'),
 
-  password: yup.string()
-    .required('Informe a senha')
-    .min(6, 'A senha deve ter no mínimo 6 digitos.'),
+  password:
+    yup.string()
+      .required('Informe a senha')
+      .min(6, 'A senha deve ter no mínimo 6 digitos.'),
 
-  password_confirm: yup.string()
-    .required('As senhas não são iguais.')
-    .oneOf([yup.ref('password') || null], 'As senhas não são iguais.')
+  password_confirm:
+    yup.string()
+      .required('As senhas não são iguais.')
+      .oneOf([yup.ref('password') || null], 'As senhas não são iguais.')
 });
 
 export function SignUp() {
