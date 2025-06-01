@@ -19,7 +19,6 @@ Aplicativo mobile desenvolvido com React Native e Expo, focado em gerenciamento 
 - [Axios](https://axios-http.com/)
 - [Native Base](https://nativebase.io/)
 - [AsyncStorage](https://react-native-async-storage.github.io/async-storage/)
-- [@react-native-community/netinfo](https://github.com/react-native-netinfo/react-native-netinfo)
 - [Phosphor Icons](https://phosphoricons.com/)
 
 ### 🌐 Backend
