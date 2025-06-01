@@ -13,6 +13,11 @@ Aplicativo mobile desenvolvido com React Native e Expo, focado em gerenciamento 
 - **React Hook Form**
 - **React Navigation** -->
 
+## 📁 Estrutura do Projeto
+
+- frontend/: Aplicativo mobile com React Native + Expo
+- backend/: API em Node.js com Fastify + Prisma
+
 ## 🔧 Tecnologias Utilizadas
 
 ### 📱 Frontend (React Native + Expo)
