@@ -2,17 +2,6 @@
 
 Aplicativo mobile desenvolvido com React Native e Expo, focado em gerenciamento de treinos em academias.
 
-<!-- ## 🚀 Tecnologias utilizadas
-
-- **Expo**
-- **TypeScript**
-- **React Native**
-- **Native Base**
-- **Axios**
-- **Yup**
-- **React Hook Form**
-- **React Navigation** -->
-
 ## 📁 Estrutura do Projeto
 
 - frontend/: Aplicativo mobile com React Native + Expo
