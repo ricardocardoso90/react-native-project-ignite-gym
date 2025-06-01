@@ -35,10 +35,8 @@ export function SignIn() {
   const { signIn } = useAuth();
   const navigation = useNavigation<AuthNavigatorRoutesProps>();
 
-  const name = "Ricardo";
-
   const [isLoading, setIsLoading] = useState(false);
-
+  
   const { control, handleSubmit, formState: { errors } } = useForm<FormaDataProps>({
     resolver: yupResolver(signInSchema)
   });
