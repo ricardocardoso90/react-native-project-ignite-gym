@@ -40,7 +40,6 @@ Aplicativo mobile desenvolvido com React Native e Expo, focado em gerenciamento 
 
 ## Capturas de Tela
 
-
 | Tela de Login | Tela de Exercícios | Tela de Detalhes |
 |---------------|--------------------|------------------|
 | ![Login](./frontend/assets/login.png) | ![Exercícios](./frontend/assets/exercise.png) | ![Detalhes](./frontend/assets/history.png) |
