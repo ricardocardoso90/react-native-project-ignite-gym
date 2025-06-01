@@ -24,11 +24,11 @@ Aplicativo mobile desenvolvido com React Native e Expo, focado em gerenciamento 
 
 ## 📷 Capturas de Tela
 
-> **Dica:** Para adicionar suas capturas de tela, salve as imagens em uma pasta (por exemplo, `assets/`) e insira os links abaixo.
+<!-- > **Dica:** Para adicionar suas capturas de tela, salve as imagens em uma pasta (por exemplo, `assets/`) e insira os links abaixo. -->
 
 | Tela de Login | Tela de Exercícios | Tela de Detalhes |
 |---------------|--------------------|------------------|
-| ![Login](./assets/login.png) | ![Exercícios](./assets/exercicios.png) | ![Detalhes](./assets/details.png) |
+| ![Login](./frontend/assets/login.png) | ![Exercícios](./frontend/assets/exercise.png) | ![Detalhes](./frontend/assets/history.png) |
 
 ## 🔧 Instalação
 
