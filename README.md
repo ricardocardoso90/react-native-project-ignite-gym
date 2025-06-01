@@ -28,7 +28,7 @@ Aplicativo mobile desenvolvido com React Native e Expo, focado em gerenciamento 
 
 | Tela de Login | Tela de Exercícios | Tela de Detalhes |
 |---------------|--------------------|------------------|
-| ![Login](./assets/login.png) | ![Exercícios](./assets/exercises.png) | ![Detalhes](./assets/details.png) |
+| ![Login](./assets/login.png) | ![Exercícios](./assets/exercicios.png) | ![Detalhes](./assets/details.png) |
 
 ## 🔧 Instalação
 
