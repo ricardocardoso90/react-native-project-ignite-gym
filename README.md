@@ -2,14 +2,14 @@
 
 Aplicativo mobile desenvolvido com React Native e Expo, focado em gerenciamento de treinos em academias.
 
-## 📁 Estrutura do Projeto
+## Estrutura do Projeto
 
 - frontend/: Aplicativo mobile com React Native + Expo
 - backend/: API em Node.js com Fastify + Prisma
 
-## 🔧 Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
-### 📱 Frontend (React Native + Expo)
+### Frontend (React Native + Expo)
 - [React Native](https://reactnative.dev/)
 - [Expo](https://expo.dev/)
 - [TypeScript](https://www.typescriptlang.org/)
@@ -21,7 +21,7 @@ Aplicativo mobile desenvolvido com React Native e Expo, focado em gerenciamento 
 - [AsyncStorage](https://react-native-async-storage.github.io/async-storage/)
 - [Phosphor Icons](https://phosphoricons.com/)
 
-### 🌐 Backend
+### Backend
 - [Fastify](https://www.fastify.io/)
 - [Prisma ORM](https://www.prisma.io/)
 - [SQLite](https://www.sqlite.org/)
@@ -29,27 +29,38 @@ Aplicativo mobile desenvolvido com React Native e Expo, focado em gerenciamento 
 
 ---
 
-## 📱 Funcionalidades
+## Funcionalidades
 
-- ✅ Autenticação de usuários (login e cadastro)
-- 📋 Visualização de grupos musculares
-- 🏋️‍♂️ Listagem de exercícios por grupo
-- 🔍 Detalhes dos exercícios com vídeo demonstrativo
-- 📝 Registro e histórico de treinos realizados
-- 👤 Perfil do usuário com opções de edição
+- Autenticação de usuários (login e cadastro)
+- Visualização de grupos musculares
+- Listagem de exercícios por grupo
+- Detalhes dos exercícios com vídeo demonstrativo
+- Registro e histórico de treinos realizados
+- Perfil do usuário com opções de edição
 
-## 📷 Capturas de Tela
+## Capturas de Tela
 
-<!-- > **Dica:** Para adicionar suas capturas de tela, salve as imagens em uma pasta (por exemplo, `assets/`) e insira os links abaixo. -->
 
 | Tela de Login | Tela de Exercícios | Tela de Detalhes |
 |---------------|--------------------|------------------|
 | ![Login](./frontend/assets/login.png) | ![Exercícios](./frontend/assets/exercise.png) | ![Detalhes](./frontend/assets/history.png) |
 
-## 🔧 Instalação
+## Instalação
 
-Clone o repositório e instale as dependências:
+1. Instale as dependências:
 
-```bash
-npx create-expo-app@latest
-npm install
+   ```bash
+   npm install
+   # ou
+   yarn install
+   ```
+
+## Executando o Projeto
+
+1. Inicie o servidor de desenvolvimento:
+
+   ```bash
+   npm start
+   # ou
+   yarn start
+   ```
