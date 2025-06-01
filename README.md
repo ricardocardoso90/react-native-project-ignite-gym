@@ -2,7 +2,7 @@
 
 Aplicativo mobile desenvolvido com React Native e Expo, focado em gerenciamento de treinos em academias.
 
-## 🚀 Tecnologias utilizadas
+<!-- ## 🚀 Tecnologias utilizadas
 
 - **Expo**
 - **TypeScript**
@@ -11,7 +11,30 @@ Aplicativo mobile desenvolvido com React Native e Expo, focado em gerenciamento 
 - **Axios**
 - **Yup**
 - **React Hook Form**
-- **React Navigation**
+- **React Navigation** -->
+
+## 🔧 Tecnologias Utilizadas
+
+### 📱 Frontend (React Native + Expo)
+- [React Native](https://reactnative.dev/)
+- [Expo](https://expo.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [React Navigation](https://reactnavigation.org/)
+- [React Hook Form](https://react-hook-form.com/)
+- [Yup](https://github.com/jquense/yup)
+- [Axios](https://axios-http.com/)
+- [Native Base](https://nativebase.io/)
+- [AsyncStorage](https://react-native-async-storage.github.io/async-storage/)
+- [@react-native-community/netinfo](https://github.com/react-native-netinfo/react-native-netinfo)
+- [Phosphor Icons](https://phosphoricons.com/)
+
+### 🌐 Backend
+- [Fastify](https://www.fastify.io/)
+- [Prisma ORM](https://www.prisma.io/)
+- [SQLite](https://www.sqlite.org/)
+- [Zod](https://zod.dev/)
+
+---
 
 ## 📱 Funcionalidades
 
