@@ -1,8 +1,8 @@
-import { api } from "@services/api";
-import { UserDTO } from "@dtos/UserDTO";
+import { api } from "../services/api";
+import { UserDTO } from "../dtos/UserDTO";
 import { createContext, useEffect, useState } from "react";
-import { storageUserSave, storageUserRemove, storageUserGet } from "@storage/storageAuthUser";
-import { storageAuthTokenGet, storageAuthTokenRemove, storageAuthTokenSave } from "@storage/storageAuthToken";
+import { storageUserSave, storageUserRemove, storageUserGet } from "../storage/storageAuthUser";
+import { storageAuthTokenGet, storageAuthTokenRemove, storageAuthTokenSave } from "../storage/storageAuthToken";
 
 type AuthContextDataProps = {
   user: UserDTO;

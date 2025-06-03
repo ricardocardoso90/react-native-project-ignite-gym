@@ -1,5 +1,5 @@
-import { storageAuthTokenGet, storageAuthTokenSave } from "@storage/storageAuthToken";
-import { AppError } from "@utils/AppError";
+import { storageAuthTokenGet, storageAuthTokenSave } from "../storage/storageAuthToken";
+import { AppError } from "../utils/AppError";
 import axios, { AxiosError, AxiosInstance } from "axios";
 
 type SignOut = () => void;
@@ -14,7 +14,7 @@ type APIInstanceProps = AxiosInstance & {
 };
 
 const api = axios.create({
-  baseURL: 'http://192.168.1.136:3333'
+  baseURL: 'http://162.120.186.81:3333'
 }) as APIInstanceProps;
 
 let failedQueue: Array<PromiseType> = [];

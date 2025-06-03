@@ -1,16 +1,16 @@
 import { useCallback, useEffect, useState } from "react";
-import { AppNavigatorRoutesProp } from "@routes/app.routes";
+import { AppNavigatorRoutesProp } from "../../routes/app.routes";
 import { useFocusEffect, useNavigation } from "@react-navigation/native";
 import { FlatList, Heading, HStack, Text, useToast, VStack } from "native-base";
 
-import { api } from "@services/api";
-import { AppError } from "@utils/AppError";
-import { ExerciseDTO } from "@dtos/ExerciseDTO";
+import { api } from "../../services/api";
+import { AppError } from "../../utils/AppError";
+import { ExerciseDTO } from "../../dtos/ExerciseDTO";
 
-import { Group } from "@components/Group";
-import { HomeHeader } from "@components/HomeHeader";
-import { ExerciseCard } from "@components/ExerciseCard";
-import { Loading } from "@components/Loading";
+import { Group } from "../../components/Group";
+import { HomeHeader } from "../../components/HomeHeader";
+import { ExerciseCard } from "../../components/ExerciseCard";
+import { Loading } from "../../components/Loading";
 
 export function Home() {
   const [groups, setGroups] = useState<string[]>([]);

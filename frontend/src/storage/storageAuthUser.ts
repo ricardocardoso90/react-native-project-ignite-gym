@@ -1,4 +1,4 @@
-import { UserDTO } from "@dtos/UserDTO";
+import { UserDTO } from "../dtos/UserDTO";
 import { AUTH_USER_STORAGE } from "./storageConfig";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 

@@ -1,18 +1,18 @@
 import { Feather } from "@expo/vector-icons";
 import { TouchableOpacity } from "react-native";
-import { AppNavigatorRoutesProp } from "@routes/app.routes";
+import { AppNavigatorRoutesProp } from "../../routes/app.routes";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import { VStack, Icon, HStack, Heading, Text, Image, Box, useToast } from "native-base";
 
-import BodySvg from "@assets/body.svg";
-import SeriesSvg from "@assets/series.svg";
-import RepetitionsSvg from "@assets/repetitions.svg";
-import { Button } from "@components/Button";
-import { AppError } from "@utils/AppError";
-import { api } from "@services/api";
+import BodySvg from "../../assets/body.svg";
+import SeriesSvg from "../../assets/series.svg";
+import RepetitionsSvg from "../../assets/repetitions.svg";
+import { Button } from "../../components/Button";
+import { AppError } from "../../utils/AppError";
+import { api } from "../../services/api";
 import { useEffect, useState } from "react";
-import { ExerciseDTO } from "@dtos/ExerciseDTO";
-import { Loading } from "@components/Loading";
+import { ExerciseDTO } from "../../dtos/ExerciseDTO";
+import { Loading } from "../../components/Loading";
 
 type RouteParamsProps = {
   exerciseId: string;

@@ -1,13 +1,13 @@
 import { useCallback, useState } from "react";
 import { Heading, SectionList, Text, useToast, VStack } from "native-base";
 
-import { api } from "@services/api";
-import { AppError } from "@utils/AppError";
-import { ScreenHeader } from "@screens/ScreenHeader";
-import { HistoryCard } from "@components/HistoryCard";
+import { api } from "../../services/api";
+import { AppError } from "../../utils/AppError";
+import { ScreenHeader } from "../ScreenHeader";
+import { HistoryCard } from "../../components/HistoryCard";
 import { useFocusEffect } from "@react-navigation/native";
-import { HistoryByDayDTO } from "@dtos/HistoryByDayDTO";
-import { Loading } from "@components/Loading";
+import { HistoryByDayDTO } from "../../dtos/HistoryByDayDTO";
+import { Loading } from "../../components/Loading";
 
 // const DATA = [
 //   {

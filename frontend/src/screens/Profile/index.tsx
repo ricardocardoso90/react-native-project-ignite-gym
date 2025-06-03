@@ -2,21 +2,21 @@ import { useState } from "react";
 import { TouchableOpacity } from "react-native";
 import { Center, Heading, ScrollView, Skeleton, Text, useToast, VStack } from "native-base";
 
-import { Input } from "@components/Input";
-import { Button } from "@components/Button";
-import { UserPhoto } from "@components/UserPhoto";
-import { ScreenHeader } from "@screens/ScreenHeader";
+import { Input } from "../../components/Input";
+import { Button } from "../../components/Button";
+import { UserPhoto } from "../../components/UserPhoto";
+import { ScreenHeader } from "../../screens/ScreenHeader";
 
 import * as yup from "yup";
 import * as FileSystem from "expo-file-system";
 import * as ImagePicker from "expo-image-picker";
 
-import { api } from "@services/api";
-import { useAuth } from "@hooks/useAuth";
-import { AppError } from "@utils/AppError";
+import { api } from "../../services/api";
+import { useAuth } from "../../hooks/useAuth";
+import { AppError } from "../../utils/AppError";
 import { Controller, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import userPhotoDefault from "@assets/userPhotoDefault.png";
+import userPhotoDefault from "../../assets/userPhotoDefault.png";
 
 type FormDataProps = {
   name: string;

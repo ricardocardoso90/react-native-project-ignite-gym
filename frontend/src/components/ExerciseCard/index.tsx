@@ -1,6 +1,6 @@
-import { api } from "@services/api";
+import { api } from "../../services/api";
 import { Entypo } from "@expo/vector-icons";
-import { ExerciseDTO } from "@dtos/ExerciseDTO";
+import { ExerciseDTO } from "../../dtos/ExerciseDTO";
 import { TouchableOpacity, TouchableOpacityProps } from "react-native";
 import { Heading, HStack, Icon, Image, Text, VStack } from "native-base";
 

@@ -1,4 +1,4 @@
-import { HistoryDTO } from "@dtos/HistoryDTO";
+import { HistoryDTO } from "../../dtos/HistoryDTO";
 import { Heading, HStack, Text, VStack } from "native-base";
 
 type Props = {

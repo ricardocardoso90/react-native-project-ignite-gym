@@ -1,19 +1,19 @@
 import { Center, Heading, Image, Text, VStack, ScrollView, useToast } from "native-base";
 
-import LogoSvg from "@assets/logo.svg";
-import BackgroundImg from "@assets/background.png";
+import LogoSvg from "../../assets/logo.svg";
+import BackgroundImg from "../../assets/background.png";
 
-import { Input } from "@components/Input";
-import { Button } from "@components/Button";
+import { Input } from "../../components/Input";
+import { Button } from "../../components/Button";
 import { useNavigation } from "@react-navigation/native";
 import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 import * as yup from "yup";
-import { api } from "@services/api";
-import { AppError } from "@utils/AppError";
+import { api } from "../../services/api";
+import { AppError } from "../../utils/AppError";
 import { useState } from "react";
-import { useAuth } from "@hooks/useAuth";
+import { useAuth } from "../../hooks/useAuth";
 
 type FormDataProps = {
   name: string;
