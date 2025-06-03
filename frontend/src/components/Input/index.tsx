@@ -1,6 +1,6 @@
-import { Input as NativeBaseInput, IInputProps, FormControl } from 'native-base';
+import { InputProps } from "react-native-elements";
 
-type Props = IInputProps & {
+type Props = InputProps & {
   errorMessage?: string | null;
 };
 

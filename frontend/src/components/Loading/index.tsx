@@ -1,9 +1,9 @@
-import { Center, Spinner } from "native-base";
+import { Text, View } from "react-native";
 
 export function Loading() {
   return (
-    <Center flex={1} bg="gray.700">
-      <Spinner color="green.500" />
-    </Center>
+    <View style={{flex: 1, backgroundColor: "#121214"}}>
+     <Text>Carregando...</Text>
+    </View>
   )
 };

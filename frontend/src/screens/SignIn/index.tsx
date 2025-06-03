@@ -6,64 +6,29 @@ import { AuthNavigatorRoutesProps } from "../../routes/auth.routes";
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
 import { useNavigation } from "@react-navigation/native";
-import { Controller, useForm } from "react-hook-form";
+import { Controller, useForm, Control } from "react-hook-form";
 
 import { useAuth } from "../../hooks/useAuth";
 import { AppError } from "../../utils/AppError";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { ScrollView } from "react-native";
-import { Center, Heading, Image, Text, useToast, VStack } from "native-base";
+import { ScrollView, Text, View } from "react-native";
+import { Image } from "react-native-elements";
 
 type FormaDataProps = {
   email: string;
   password: string;
 };
 
-const signInSchema = yup.object({
-  email:
-    yup.string()
-      .required('Informe o E-mail'),
+export default function SignIn() {
 
-  password:
-    yup.string()
-      .required('Informe a senha')
-});
-
-export function SignIn() {
-
-  const toast = useToast();
   const { signIn } = useAuth();
   const navigation = useNavigation<AuthNavigatorRoutesProps>();
 
   const [isLoading, setIsLoading] = useState(false);
 
-  const { control, handleSubmit, formState: { errors } } = useForm<FormaDataProps>({
-    resolver: yupResolver(signInSchema)
-  });
-
   function handleSignUp() {
     navigation.navigate("signUp");
-  };
-
-  async function handleSignIn({ email, password }: FormaDataProps) {
-    try {
-      setIsLoading(true);
-      await signIn(email, password);
-
-    } catch (error) {
-      const isAppError = error instanceof AppError;
-      const title = isAppError
-        ? error.message
-        : 'Não foi possível entrar. Tente novamente mais tarde!';
-
-      setIsLoading(false);
-      toast.show({
-        title,
-        placement: 'top',
-        bgColor: 'red.500'
-      });
-    };
   };
 
   return (
@@ -71,35 +36,28 @@ export function SignIn() {
       showsVerticalScrollIndicator={false}
       contentContainerStyle={{ flexGrow: 1 }}
     >
-      <VStack flex={1} pb={16}>
+      <View style={{ flex: 1, paddingBottom: 16 }}>
         <Image
           source={BackgroundImg}
           defaultSource={BackgroundImg}
           alt="imagem de fundo"
-          position="absolute"
+
+          // position="absolute"
         />
 
-        <Center my={16}>
+        <View style={{ marginTop: 16, marginBottom: 16 }}>
           <LogoSvg />
-          <Text
-            color="gray.100"
-            fontSize="sm"
-          >
+          <Text style={{ color: "#E1E1E6", fontSize: 14 }}>
             Treine sua mente e o seu corpo
           </Text>
-        </Center>
+        </View>
 
-        <Center px={10}>
-          <Heading
-            color="gray.100"
-            fontSize="xl" mb={6}
-            fontFamily="heading"
-          >
+        <View style={{ paddingLeft: 10, paddingRight: 10 }}>
+          <Text style={{ color: "#E1E1E6", fontSize: 20, marginBottom: 6, fontFamily: "Roboto_700Bold" }}>
             Acesse sua conta
-          </Heading>
+          </Text>
 
           <Controller
-            control={control}
             name="email"
             // rules={{
             //   required: "Informe o E-mail",
@@ -111,7 +69,6 @@ export function SignIn() {
                 autoCapitalize="none"
                 onChangeText={onChange}
                 value={value}
-                errorMessage={errors.email?.message}
               />
             )}
           />
@@ -119,7 +76,6 @@ export function SignIn() {
           {/* <Text color="red.500">{errors.email?.message}</Text> */}
 
           <Controller
-            control={control}
             name="password"
             // rules={{
             //   required: "Digite a senha"
@@ -131,28 +87,17 @@ export function SignIn() {
                 onChangeText={onChange}
                 value={value}
                 returnKeyType="send"
-                onSubmitEditing={handleSubmit(handleSignIn)}
-                errorMessage={errors.password?.message}
               />
             )}
           />
 
           {/* <Text color="red.500">{errors.password?.message}</Text> */}
 
-          <Button
-            title="Acessar"
-            onPress={handleSubmit(handleSignIn)}
-            isLoading={isLoading}
-          />
-        </Center>
+          <Button title="Acessar"/>
+        </View>
 
-        <Center px={10} mt={20}>
-          <Text
-            color="gray.100"
-            fontSize="sm"
-            fontFamily="body"
-            mb={3}
-          >
+        <View style={{paddingLeft: 10, paddingRight: 10, marginTop: 20}}>
+          <Text style={{color: "#E1E1E6", fontSize: 14, fontFamily: "Roboto_400Regular", marginBottom: 3}}>
             Ainda não tem acesso?
           </Text>
           <Button
@@ -160,8 +105,8 @@ export function SignIn() {
             variant="outline"
             onPress={handleSignUp}
           />
-        </Center>
-      </VStack>
+        </View>
+      </View>
     </ScrollView>
   )
 };
