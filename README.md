@@ -44,7 +44,7 @@ Aplicativo mobile desenvolvido com React Native e Expo, focado em gerenciamento 
 |---------------|--------------------|------------------|
 | ![Login](./frontend/assets/login.png) | ![Exercícios](./frontend/assets/exercise.png) | ![Detalhes](./frontend/assets/history.png) |
 
-## Instalaçãoo
+## Instalação
 
 1. Instale as dependências:
 
