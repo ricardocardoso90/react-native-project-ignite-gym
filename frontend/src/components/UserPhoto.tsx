@@ -1,18 +1,18 @@
-import { Image, IImageProps } from "native-base";
+import { Image, IImageProps } from 'native-base';
 
-type UserPhotoInterface = IImageProps & {
+type Props = IImageProps & {
   size: number;
-};
+}
 
-export function UserPhoto({ size, ...rest }: UserPhotoInterface) {
+export function UserPhoto({ size, ...rest }: Props) {
   return (
-    <Image
-      w={size}
-      h={size}
-      rounded="full"
+    <Image 
+      w={size} 
+      h={size} 
+      rounded="full" 
       borderWidth={2}
       borderColor="gray.400"
-      {...rest}
+      {...rest} 
     />
   );
 }

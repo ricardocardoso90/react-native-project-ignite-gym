@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "igym",
-    "slug": "igym",
+    "name": "ignite-rn-03-ignite-gym",
+    "slug": "ignite-rn-03-ignite-gym",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -9,7 +9,7 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#121214"
+      "backgroundColor": "#ffffff"
     },
     "plugins": [
       [
@@ -22,7 +22,9 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true
     },
