@@ -185,7 +185,7 @@ export function Profile() {
             render={({ field: { value, onChange } }) => (
               <Input
                 placeholder="E-mail"
-                isDisabled
+                editable
                 onChangeText={onChange}
                 value={value}
               />

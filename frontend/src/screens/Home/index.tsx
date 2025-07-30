@@ -10,8 +10,8 @@ import { AppNavigatorRoutesProps } from "@routes/app.routes";
 
 import { Group } from "@components/Group";
 import { Loading } from "@components/Loading";
-import { HomeHeader } from "@components/HomeHeader";
 import { ExerciseCard } from "@components/ExerciseCard";
+import { HomeHeader } from "@components/HomeHeader";
 
 export function Home() {
   const [isLoading, setIsLoading] = useState(true);
