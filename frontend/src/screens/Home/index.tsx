@@ -31,8 +31,8 @@ export function Home() {
       setGroups(response.data);
     } catch (error) {
       console.log(error);
-    };
-  };
+    }
+  }
 
   async function fecthExercisesByGroup() {
     try {
@@ -43,8 +43,8 @@ export function Home() {
       console.log(error);
     } finally {
       setIsLoading(false);
-    };
-  };
+    }
+  }
 
   useEffect(() => {
     fetchGroups();
@@ -77,29 +77,29 @@ export function Home() {
           style={styles.groupListSpacing}
         />
 
-        {isLoading
-          ? <Loading />
-          : (
-            <View style={styles.exerciseContainer}>
-              <View style={styles.exerciseHeader}>
-                <Text style={styles.exerciseTitle}>Exercícios</Text>
-                <Text style={styles.exerciseCount}>{exercises.length}</Text>
-              </View>
-
-              <FlatList
-                data={exercises}
-                keyExtractor={(item) => item.id}
-                renderItem={({ item }) => (
-                  <ExerciseCard
-                    data={item}
-                    onPress={() => handleOpenExerciseDetails(item.id)}
-                  />
-                )}
-                showsVerticalScrollIndicator={false}
-                contentContainerStyle={styles.exerciseList}
-              />
+        {isLoading ? (
+          <Loading />
+        ) : (
+          <View style={styles.exerciseContainer}>
+            <View style={styles.exerciseHeader}>
+              <Text style={styles.exerciseTitle}>Exercícios</Text>
+              <Text style={styles.exerciseCount}>{exercises.length}</Text>
             </View>
-          )}
+
+            <FlatList
+              data={exercises}
+              keyExtractor={(item) => item.id}
+              renderItem={({ item }) => (
+                <ExerciseCard
+                  data={item}
+                  onPress={() => handleOpenExerciseDetails(item.id)}
+                />
+              )}
+              showsVerticalScrollIndicator={false}
+              contentContainerStyle={styles.exerciseList}
+            />
+          </View>
+        )}
       </View>
     </View>
   );
