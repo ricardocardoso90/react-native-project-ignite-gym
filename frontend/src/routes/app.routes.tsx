@@ -6,10 +6,10 @@ import HomeSvg from '@assets/home.svg';
 import HistorySvg from '@assets/history.svg';
 import ProfileSvg from '@assets/profile.svg';
 
-import { Home } from '@screens/Home';
-import { Exercise } from '@screens/Exercise';
-import { History } from '@screens/History';
-import { Profile } from '@screens/Profile';
+import { Home } from '@screens/Home/Home';
+import { Exercise } from '@screens/Exercise/index';
+import { History } from '@screens/History/History';
+import { Profile } from '@screens/Profile/Profile';
 
 type AppRoutes = {
   home: undefined;

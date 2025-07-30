@@ -32,7 +32,7 @@ const signUpSchema = yup.object({
   password_confirm: yup.string().required('Confirme a senha.').oneOf([yup.ref('password'), null], 'A confirmação da senha não confere')
 });
 
-export function SignUp() {
+export function Register() {
   const [isLoading, setIsLoading] = useState(false);
 
   const toast = useToast();
