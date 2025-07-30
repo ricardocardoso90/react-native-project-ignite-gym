@@ -1,32 +1,35 @@
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
-  container: {
+  containerHeader: {
     flex: 1,
-    backgroundColor: "#121214", // cor de fundo típica de apps de treino
-    paddingHorizontal: 16,
+    backgroundColor: "#121214",
+  },
+  containerExercise: {
+    flex: 1,
     paddingTop: 16,
+    paddingHorizontal: 16,
   },
   groupList: {
     paddingHorizontal: 8,
   },
   groupListSpacing: {
-    marginVertical: 24,
     maxHeight: 40,
+    marginVertical: 24,
   },
   exerciseContainer: {
     flex: 1,
     paddingTop: 16,
   },
   exerciseHeader: {
+    marginBottom: 16,
     flexDirection: "row",
     alignItems: "center",
-    marginBottom: 16,
   },
   exerciseTitle: {
     flex: 1,
-    color: "#E1E1E6",
     fontSize: 20,
+    color: "#E1E1E6",
     fontWeight: "bold",
   },
   exerciseCount: {

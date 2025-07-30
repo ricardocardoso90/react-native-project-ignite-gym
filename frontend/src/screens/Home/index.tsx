@@ -57,48 +57,50 @@ export function Home() {
   );
 
   return (
-    <View style={styles.container}>
+    <View style={styles.containerHeader}>
       <HomeHeader />
 
-      <FlatList
-        data={groups}
-        keyExtractor={(item) => item}
-        renderItem={({ item }) => (
-          <Group
-            name={item}
-            isActive={groupSelected.toUpperCase() === item.toUpperCase()}
-            onPress={() => setGroupSelected(item)}
-          />
-        )}
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        contentContainerStyle={styles.groupList}
-        style={styles.groupListSpacing}
-      />
+      <View style={styles.containerExercise}>
+        <FlatList
+          data={groups}
+          keyExtractor={(item) => item}
+          renderItem={({ item }) => (
+            <Group
+              name={item}
+              isActive={groupSelected.toUpperCase() === item.toUpperCase()}
+              onPress={() => setGroupSelected(item)}
+            />
+          )}
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={styles.groupList}
+          style={styles.groupListSpacing}
+        />
 
-      {isLoading ? (
-        <Loading />
-      ) : (
-        <View style={styles.exerciseContainer}>
-          <View style={styles.exerciseHeader}>
-            <Text style={styles.exerciseTitle}>Exercícios</Text>
-            <Text style={styles.exerciseCount}>{exercises.length}</Text>
-          </View>
+        {isLoading
+          ? <Loading />
+          : (
+            <View style={styles.exerciseContainer}>
+              <View style={styles.exerciseHeader}>
+                <Text style={styles.exerciseTitle}>Exercícios</Text>
+                <Text style={styles.exerciseCount}>{exercises.length}</Text>
+              </View>
 
-          <FlatList
-            data={exercises}
-            keyExtractor={(item) => item.id}
-            renderItem={({ item }) => (
-              <ExerciseCard
-                onPress={() => handleOpenExerciseDetails(item.id)}
-                data={item}
+              <FlatList
+                data={exercises}
+                keyExtractor={(item) => item.id}
+                renderItem={({ item }) => (
+                  <ExerciseCard
+                    data={item}
+                    onPress={() => handleOpenExerciseDetails(item.id)}
+                  />
+                )}
+                showsVerticalScrollIndicator={false}
+                contentContainerStyle={styles.exerciseList}
               />
-            )}
-            showsVerticalScrollIndicator={false}
-            contentContainerStyle={styles.exerciseList}
-          />
-        </View>
-      )}
+            </View>
+          )}
+      </View>
     </View>
   );
 }
