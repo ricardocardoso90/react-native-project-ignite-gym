@@ -1,6 +1,6 @@
+import { AppError } from "@utils/AppError";
 import axios, { AxiosError, AxiosInstance } from "axios";
 
-import { AppError } from "@utils/AppError";
 import {
   storageAuthTokenGet,
   storageAuthTokenSave,

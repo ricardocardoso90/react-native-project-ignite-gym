@@ -30,10 +30,5 @@ export const styles = StyleSheet.create({
   },
   updateButton: {
     marginTop: 16
-  },
-  // photoLoader: {
-  //   width: PHOTO_SIZE,
-  //   height: PHOTO_SIZE,
-  //   marginBottom: 16
-  // }
+  }
 });

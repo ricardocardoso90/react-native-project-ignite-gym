@@ -3,8 +3,8 @@ import {
   createBottomTabNavigator,
 } from "@react-navigation/bottom-tabs";
 
+import { THEME } from "../theme/theme";
 import { Platform } from "react-native";
-import { useTheme } from "native-base";
 
 import HomeSvg from "@assets/home.svg";
 import HistorySvg from "@assets/history.svg";
@@ -28,7 +28,7 @@ const { Navigator, Screen } = createBottomTabNavigator<AppRoutes>();
 export type AppNavigatorRoutesProps = BottomTabNavigationProp<AppRoutes>;
 
 export function AppRoutes() {
-  const { sizes, colors } = useTheme();
+  const { sizes, colors } = THEME;
   const iconSize = sizes[6];
 
   return (

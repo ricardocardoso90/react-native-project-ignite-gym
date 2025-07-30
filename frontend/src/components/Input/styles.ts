@@ -2,16 +2,18 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
   container: {
+    width: '100%',
     marginBottom: 16
   },
   input: {
-    backgroundColor: '#323238', 
     height: 56, 
     paddingHorizontal: 16,
     fontSize: 16,
     color: '#FFFFFF',
     borderRadius: 4,
     borderWidth: 0,
+    backgroundColor: '#323238', 
+    
   },
   inputInvalid: {
     borderWidth: 1,
