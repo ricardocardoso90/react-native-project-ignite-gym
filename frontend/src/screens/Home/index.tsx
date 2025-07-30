@@ -1,15 +1,10 @@
+import { styles } from "./styles";
+import { api } from "@services/api";
+
+import { View, Text, FlatList } from "react-native";
 import { useState, useEffect, useCallback } from "react";
-import { 
-  View, 
-  Text, 
-  FlatList, 
-  TouchableOpacity, 
-  StyleSheet 
-} from "react-native";
 import { useNavigation, useFocusEffect } from "@react-navigation/native";
 
-import { api } from "@services/api";
-import { AppError } from "@utils/AppError";
 import { ExerciseDTO } from "@dtos/ExerciseDTO";
 import { AppNavigatorRoutesProps } from "@routes/app.routes";
 
@@ -17,7 +12,6 @@ import { Group } from "@components/Group";
 import { Loading } from "@components/Loading";
 import { HomeHeader } from "@components/HomeHeader";
 import { ExerciseCard } from "@components/ExerciseCard";
-import { styles } from "../Home";
 
 export function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -29,7 +23,7 @@ export function Home() {
 
   function handleOpenExerciseDetails(exerciseId: string) {
     navigation.navigate("exercise", { exerciseId });
-  }
+  };
 
   async function fetchGroups() {
     try {
@@ -37,8 +31,8 @@ export function Home() {
       setGroups(response.data);
     } catch (error) {
       console.log(error);
-    }
-  }
+    };
+  };
 
   async function fecthExercisesByGroup() {
     try {
@@ -49,8 +43,8 @@ export function Home() {
       console.log(error);
     } finally {
       setIsLoading(false);
-    }
-  }
+    };
+  };
 
   useEffect(() => {
     fetchGroups();

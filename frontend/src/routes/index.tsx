@@ -1,31 +1,43 @@
-import { useContext } from 'react';
+import {
+  DefaultTheme,
+  NavigationContainer
+} from "@react-navigation/native";
 
-import { useTheme, Box } from 'native-base';
-import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
+import { View, StyleSheet } from "react-native";
 
-import { useAuth } from '@hooks/useAuth';
-
-import { AuthRoutes } from "./auth.routes";
 import { AppRoutes } from "./app.routes";
-import { Loading } from '@components/Loading';
+import { AuthRoutes } from "./auth.routes";
+
+import { useAuth } from "@hooks/useAuth";
+import { Loading } from "@components/Loading";
 
 export function Routes() {
-  const { colors } = useTheme();
-
   const { user, isLoadingUserStorageData } = useAuth();
 
-  const theme = DefaultTheme;
-  theme.colors.background = colors.gray[700];
+  const theme = {
+    ...DefaultTheme,
+    colors: {
+      ...DefaultTheme.colors,
+      background: "#121214",
+    },
+  };
 
-  if(isLoadingUserStorageData) {
-    return <Loading />
+  if (isLoadingUserStorageData) {
+    return <Loading />;
   }
 
   return (
-    <Box flex={1} bg="gray.700">
+    <View style={styles.container}>
       <NavigationContainer theme={theme}>
         {user.id ? <AppRoutes /> : <AuthRoutes />}
       </NavigationContainer>
-    </Box>
+    </View>
   );
-}
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#121214", // equivalente ao bg="gray.700"
+  },
+});

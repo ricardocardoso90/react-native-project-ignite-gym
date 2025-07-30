@@ -1,18 +1,18 @@
 import { useState } from "react";
-import { View, Text, Image, ScrollView, StyleSheet } from "react-native";
+import { styles } from "./styles";
 import { Controller, useForm } from "react-hook-form";
 import { useNavigation } from "@react-navigation/native";
+import { View, Text, Image, ScrollView } from "react-native";
 
-import { AuthNavigatorRoutesProps } from "@routes/auth.routes";
 import { useAuth } from "@hooks/useAuth";
+import { AppError } from "@utils/AppError";
+import { AuthNavigatorRoutesProps } from "@routes/auth.routes";
 
 import LogoSvg from "@assets/logo.svg";
 import BackgroundImg from "@assets/background.png";
 
-import { AppError } from "@utils/AppError";
 import { Input } from "@components/Input";
 import { Button } from "@components/Button";
-import { styles } from "./SignIn";
 
 type FormData = {
   email: string;
@@ -21,18 +21,14 @@ type FormData = {
 
 export function Login() {
   const [isLoading, setIsLoading] = useState(false);
+
   const { singIn } = useAuth();
   const navigation = useNavigation<AuthNavigatorRoutesProps>();
-
-  const {
-    control,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<FormData>();
+  const { control, handleSubmit, formState: { errors } } = useForm<FormData>();
 
   function handleNewAccount() {
     navigation.navigate("register");
-  }
+  };
 
   async function handleSignIn({ email, password }: FormData) {
     try {
@@ -45,8 +41,8 @@ export function Login() {
         : "Não foi possível entrar. Tente novamente mais tarde.";
       console.log(title);
       setIsLoading(false);
-    }
-  }
+    };
+  };
 
   return (
     <ScrollView

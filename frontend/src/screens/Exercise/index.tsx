@@ -1,161 +1,142 @@
-import { useEffect, useState } from 'react';
-import { TouchableOpacity } from 'react-native';
-import { Box, Heading, HStack, Icon, Image, Text, useToast, VStack } from 'native-base';
-import { Feather } from '@expo/vector-icons';
-import { useNavigation, useRoute } from '@react-navigation/native';
+import { useEffect, useState } from "react";
+import {
+  View,
+  Text,
+  Image,
+  TouchableOpacity,
+  StyleSheet,
+  Alert,
+  ActivityIndicator,
+} from "react-native";
+import { Feather } from "@expo/vector-icons";
+import { useNavigation, useRoute } from "@react-navigation/native";
 
-import { AppNavigatorRoutesProps } from '@routes/app.routes';
+import { AppNavigatorRoutesProps } from "@routes/app.routes";
 
-import { api } from '@services/api';
-import { AppError } from '@utils/AppError';
-import { ExerciseDTO } from '@dtos/ExerciseDTO';
+import { api } from "@services/api";
+import { AppError } from "@utils/AppError";
+import { ExerciseDTO } from "@dtos/ExerciseDTO";
 
-import BodySvg from '@assets/body.svg';
-import SeriesSvg from '@assets/series.svg';
-import RepetitionsSvg from '@assets/repetitions.svg';
+import BodySvg from "@assets/body.svg";
+import SeriesSvg from "@assets/series.svg";
+import RepetitionsSvg from "@assets/repetitions.svg";
 
-import { Button } from '@components/Button';
-import { Loading } from '@components/Loading';
-
+import { Button } from "@components/Button";
+import { Loading } from "@components/Loading"; // pode converter também se quiser
+import { styles } from "./styles";
 
 type RouteParamsProps = {
   exerciseId: string;
-}
+};
 
 export function Exercise() {
-  const [sendingRegister, setSendingRegister] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [sendingRegister, setSendingRegister] = useState(false);
   const [exercise, setExercise] = useState<ExerciseDTO>({} as ExerciseDTO);
-  const navigation = useNavigation<AppNavigatorRoutesProps>();
 
   const route = useRoute();
-  const toast = useToast();
+  const navigation = useNavigation<AppNavigatorRoutesProps>();
 
   const { exerciseId } = route.params as RouteParamsProps;
 
   function handleGoBack() {
     navigation.goBack();
-  }
+  };
 
   async function fetchExerciseDetails() {
     try {
       setIsLoading(true);
       const response = await api.get(`/exercises/${exerciseId}`);
-
       setExercise(response.data);
-
     } catch (error) {
       const isAppError = error instanceof AppError;
-      const title = isAppError ? error.message : 'Não foi possível carregar os detalhes do exercício';
-
-      toast.show({
-        title,
-        placement: 'top',
-        bgColor: 'red.500'
-      })
+      const title = isAppError
+        ? error.message
+        : "Não foi possível carregar os detalhes do exercício";
+      Alert.alert("Erro", title);
     } finally {
       setIsLoading(false);
-    }
-  }
+    };
+  };
 
   async function handleExerciseHistoryRegister() {
     try {
       setSendingRegister(true);
-      
-      await api.post('/history', { exercise_id: exerciseId });
-
-      toast.show({
-        title: 'Parabéns! Exercício registrado no seu histórico.',
-        placement: 'top',
-        bgColor: 'green.500'
-      });
-
-      navigation.navigate('history');
+      await api.post("/history", { exercise_id: exerciseId });
+      Alert.alert(
+        "Sucesso",
+        "Parabéns! Exercício registrado no seu histórico."
+      );
+      navigation.navigate("history");
     } catch (error) {
       const isAppError = error instanceof AppError;
-      const title = isAppError ? error.message : 'Não foi possível registrar exercício.';
-
-      toast.show({
-        title,
-        placement: 'top',
-        bgColor: 'red.500'
-      })
+      const title = isAppError
+        ? error.message
+        : "Não foi possível registrar exercício.";
+      Alert.alert("Erro", title);
     } finally {
       setSendingRegister(false);
-    }
-  }
+    };
+  };
 
   useEffect(() => {
     fetchExerciseDetails();
-  },[exerciseId])
+  }, [exerciseId]);
+
+  if (isLoading) return <Loading />;
 
   return (
-    <VStack flex={1}>
-      <VStack px={8} bg="gray.600" pt={12}>
-        <TouchableOpacity onPress={handleGoBack}>
-          <Icon 
-            as={Feather}
-            name="arrow-left"
-            color="green.500"
-            size={6}
-          />
+    <View style={styles.container}>
+      <View style={styles.header}>
+        <TouchableOpacity onPress={handleGoBack} style={styles.goBackButton}>
+          <Feather name="arrow-left" size={24} color="#00B37E" />
         </TouchableOpacity>
 
-        <HStack justifyContent="space-between" mt={4} mb={8} alignItems="center">
-          <Heading color="gray.100" fontSize="lg"  flexShrink={1} fontFamily="heading">
+        <View style={styles.titleContainer}>
+          <Text style={styles.title} numberOfLines={1}>
             {exercise.name}
-          </Heading>
+          </Text>
 
-          <HStack alignItems="center">
-            <BodySvg />
+          <View style={styles.groupContainer}>
+            <BodySvg width={20} height={20} />
+            <Text style={styles.groupText}>{exercise.group}</Text>
+          </View>
+        </View>
+      </View>
 
-            <Text color="gray.200" ml={1} textTransform="capitalize">
-              {exercise.group}
-            </Text>
-          </HStack>
-        </HStack>
-      </VStack>
+      <View style={styles.content}>
+        <View style={styles.imageContainer}>
+          <Image
+            source={{
+              uri: `${api.defaults.baseURL}/exercise/demo/${exercise?.demo}`,
+            }}
+            style={styles.image}
+            resizeMode="cover"
+          />
+        </View>
 
-      {isLoading ? <Loading /> : 
-        <VStack p={8}>
-          <Box rounded="lg" mb={3} overflow="hidden">
-            <Image
-              w="full"
-              h={80}
-              source={{ uri: `${api.defaults.baseURL}/exercise/demo/${exercise?.demo}` }}
-              alt="Nome do exercício"
-              resizeMode="cover"
-              rounded="lg"
-            />
-          </Box>
+        <View style={styles.detailsBox}>
+          <View style={styles.detailsRow}>
+            <View style={styles.detailItem}>
+              <SeriesSvg width={24} height={24} />
+              <Text style={styles.detailText}>{exercise.series} séries</Text>
+            </View>
 
-          <Box bg="gray.600" rounded="md" pb={4} px={4}>
-            <HStack alignItems="center" justifyContent="space-around" mb={6} mt={5}>
-              <HStack>
-                <SeriesSvg />
+            <View style={styles.detailItem}>
+              <RepetitionsSvg width={24} height={24} />
+              <Text style={styles.detailText}>
+                {exercise.repetitions} repetições
+              </Text>
+            </View>
+          </View>
 
-                <Text color="gray.200" ml="2">
-                  {exercise.series} séries
-                </Text>
-              </HStack>
-
-              <HStack>
-                <RepetitionsSvg />
-                
-                <Text color="gray.200" ml="2">
-                  {exercise.repetitions} repetições
-                </Text>
-              </HStack>
-            </HStack>
-
-            <Button 
-              title="Marcar como realizado"
-              isLoading={sendingRegister}
-              onPress={handleExerciseHistoryRegister}
-            />
-          </Box>
-        </VStack>
-      }
-    </VStack>
+          <Button
+            title="Marcar como realizado"
+            isLoading={sendingRegister}
+            onPress={handleExerciseHistoryRegister}
+          />
+        </View>
+      </View>
+    </View>
   );
 }
