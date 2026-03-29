@@ -1,14 +1,7 @@
 import { styles } from './styles';
+import { View, Text, Image, TouchableOpacity, TouchableOpacityProps } from 'react-native';
+
 import { api } from '@services/api';
-
-import {
-  View,
-  Text,
-  Image,
-  TouchableOpacity,
-  TouchableOpacityProps
-} from 'react-native';
-
 import { Entypo } from '@expo/vector-icons';
 import { ExerciseDTO } from '@dtos/ExerciseDTO';
 
@@ -38,4 +31,4 @@ export function ExerciseCard({ data, ...rest }: Props) {
       <Entypo name="chevron-thin-right" size={20} color="#A3A3A3" />
     </TouchableOpacity>
   );
-}
+};

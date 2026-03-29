@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { styles } from "./styles";
 import { Controller, useForm } from "react-hook-form";
-import { useNavigation } from "@react-navigation/native";
 import { View, Text, Image, ScrollView } from "react-native";
 
 import { useAuth } from "@hooks/useAuth";
 import { AppError } from "@utils/AppError";
+import { useNavigation } from "@react-navigation/native";
 import { AuthNavigatorRoutesProps } from "@routes/auth.routes";
 
 import LogoSvg from "@assets/logo.svg";

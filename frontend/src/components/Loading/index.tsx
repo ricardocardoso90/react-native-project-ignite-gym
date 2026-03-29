@@ -7,4 +7,4 @@ export function Loading() {
       <ActivityIndicator size="large" color="#22C55E" /> 
     </View>
   );
-}
+};

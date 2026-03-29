@@ -1,5 +1,5 @@
-import { View, TextInput, Text, StyleSheet, TextInputProps } from 'react-native';
 import { styles } from './styles';
+import { View, TextInput, Text, TextInputProps } from 'react-native';
 
 type Props = TextInputProps & {
   errorMessage?: string | null;
@@ -23,4 +23,4 @@ export function Input({ errorMessage = null, style, ...rest }: Props) {
       {invalid && <Text style={styles.errorText}>{errorMessage}</Text>}
     </View>
   );
-}
+};

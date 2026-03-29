@@ -11,4 +11,4 @@ export function ScreenHeader({ title }: Props) {
       <Text style={styles.title}>{title}</Text>
     </View>
   );
-}
+};

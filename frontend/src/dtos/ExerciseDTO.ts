@@ -7,4 +7,4 @@ export type ExerciseDTO = {
   series: number;
   thumb: string;
   updated_at: string;
-}
+};

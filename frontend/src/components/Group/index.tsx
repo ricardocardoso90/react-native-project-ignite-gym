@@ -1,10 +1,5 @@
 import { styles } from './styles';
-
-import {
-  Text,
-  Pressable,
-  PressableProps
-} from 'react-native';
+import { Text, Pressable, PressableProps } from 'react-native';
 
 type Props = PressableProps & {
   name: string;
@@ -25,4 +20,4 @@ export function Group({ name, isActive, ...rest }: Props) {
       </Text>
     </Pressable>
   );
-}
+};

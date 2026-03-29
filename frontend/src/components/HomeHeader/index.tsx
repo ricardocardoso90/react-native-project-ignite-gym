@@ -1,12 +1,12 @@
 import { styles } from './styles';
-import { api } from '@services/api';
-import { MaterialIcons } from '@expo/vector-icons';
 import { View, Text, TouchableOpacity } from 'react-native';
 
+import { api } from '@services/api';
 import { useAuth } from '@hooks/useAuth';
+import { UserPhoto } from '@components/UserPhoto';
+import { MaterialIcons } from '@expo/vector-icons';
 import defaulUserPhotoImg from '@assets/userPhotoDefault.png';
 
-import { UserPhoto } from '@components/UserPhoto';
 
 export function HomeHeader() {
   const { user, signOut } = useAuth();
@@ -34,4 +34,4 @@ export function HomeHeader() {
       </TouchableOpacity>
     </View>
   );
-}
+};

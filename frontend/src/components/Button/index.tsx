@@ -1,12 +1,5 @@
 import { styles } from "./styles";
-
-import {
-  Text,
-  TouchableOpacity,
-  GestureResponderEvent,
-  ViewStyle,
-}
-  from "react-native";
+import { Text, TouchableOpacity, GestureResponderEvent, ViewStyle } from "react-native";
 
 type Props = {
   title: string;
@@ -26,7 +19,7 @@ export function Button({
 }: Props) {
 
   const isOutline = variant === "outline";
-  
+
   return (
     <TouchableOpacity
       style={[
@@ -39,11 +32,9 @@ export function Button({
       onPress={onPress}
       disabled={disabled}
     >
-      <Text
-        style={[styles.text, isOutline ? styles.outlineText : styles.solidText]}
-      >
+      <Text style={[styles.text, isOutline ? styles.outlineText : styles.solidText]}>
         {title}
       </Text>
     </TouchableOpacity>
   );
-}
+};

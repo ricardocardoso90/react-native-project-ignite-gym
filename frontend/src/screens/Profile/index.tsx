@@ -1,17 +1,17 @@
 import { useState } from "react";
 import { styles } from "./styles";
-import { api } from "@services/api";
+import { Controller, useForm } from "react-hook-form";
 
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Controller, useForm } from "react-hook-form";
 import { View, TouchableOpacity, ScrollView, Text } from "react-native";
 
 import * as yup from "yup";
 import * as FileSystem from "expo-file-system";
 import * as ImagePicker from "expo-image-picker";
 
-import { AppError } from "@utils/AppError";
+import { api } from "@services/api";
 import { useAuth } from "@hooks/useAuth";
+import { AppError } from "@utils/AppError";
 import defaulUserPhotoImg from "@assets/userPhotoDefault.png";
 
 import { Input } from "@components/Input";
@@ -118,8 +118,8 @@ export function Profile() {
       console.log(error);
     } finally {
       setPhotoIsLoading(false);
-    }
-  }
+    };
+  };
 
   async function handleProfileUpdate(data: FormDataProps) {
     try {
@@ -139,8 +139,8 @@ export function Profile() {
       alert(title);
     } finally {
       setIsUpdating(false);
-    }
-  }
+    };
+  };
 
   return (
     <View style={styles.container}>

@@ -16,5 +16,4 @@ export function UserPhoto({ size, alt, style, ...rest }: Props) {
   };
 
   return <Image style={[styles.image, dynamicStyle, style]} {...rest} />;
-}
-
+};

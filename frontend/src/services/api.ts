@@ -1,10 +1,7 @@
 import { AppError } from "@utils/AppError";
-import axios, { AxiosError, AxiosInstance } from "axios";
 
-import {
-  storageAuthTokenGet,
-  storageAuthTokenSave,
-} from "@storage/storageAuthToken";
+import axios, { AxiosError, AxiosInstance } from "axios";
+import { storageAuthTokenGet, storageAuthTokenSave, } from "@storage/storageAuthToken";
 
 type SignOut = () => void;
 
@@ -38,7 +35,7 @@ api.registerInterceptTokenManager = (singOut) => {
           if (!refresh_token) {
             singOut();
             return Promise.reject(requestError);
-          }
+          };
 
           const originalRequestConfig = requestError.config;
 
@@ -56,7 +53,7 @@ api.registerInterceptTokenManager = (singOut) => {
                 },
               });
             });
-          }
+          };
 
           isRefreshing = true;
 
@@ -74,7 +71,7 @@ api.registerInterceptTokenManager = (singOut) => {
                 originalRequestConfig.data = JSON.parse(
                   originalRequestConfig.data
                 );
-              }
+              };
 
               originalRequestConfig.headers = {
                 Authorization: `Bearer ${data.token}`,
@@ -103,16 +100,16 @@ api.registerInterceptTokenManager = (singOut) => {
               failedQueued = [];
             }
           });
-        }
+        };
 
         singOut();
-      }
+      };
 
       if (requestError.response && requestError.response.data) {
         return Promise.reject(new AppError(requestError.response.data.message));
       } else {
         return Promise.reject(requestError);
-      }
+      };
     }
   );
 

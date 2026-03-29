@@ -20,4 +20,4 @@ export function HistoryCard({ data }: Props) {
       <Text style={styles.hour}>{data.hour}</Text>
     </View>
   );
-}
+};

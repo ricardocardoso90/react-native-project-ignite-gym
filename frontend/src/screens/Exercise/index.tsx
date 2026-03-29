@@ -1,17 +1,10 @@
+import { styles } from "./styles";
 import { useEffect, useState } from "react";
-import {
-  View,
-  Text,
-  Image,
-  TouchableOpacity,
-  StyleSheet,
-  Alert,
-  ActivityIndicator,
-} from "react-native";
 import { Feather } from "@expo/vector-icons";
-import { useNavigation, useRoute } from "@react-navigation/native";
+import { View, Text, Image, TouchableOpacity, Alert } from "react-native";
 
 import { AppNavigatorRoutesProps } from "@routes/app.routes";
+import { useNavigation, useRoute } from "@react-navigation/native";
 
 import { api } from "@services/api";
 import { AppError } from "@utils/AppError";
@@ -23,7 +16,6 @@ import RepetitionsSvg from "@assets/repetitions.svg";
 
 import { Button } from "@components/Button";
 import { Loading } from "@components/Loading"; // pode converter também se quiser
-import { styles } from "./styles";
 
 type RouteParamsProps = {
   exerciseId: string;
@@ -139,4 +131,4 @@ export function Exercise() {
       </View>
     </View>
   );
-}
+};

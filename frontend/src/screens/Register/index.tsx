@@ -71,8 +71,8 @@ export function Register() {
         ? error.message
         : "Não foi possível criar a conta. Tente novamente mais tarde";
       alert(title);
-    }
-  }
+    };
+  };
 
   return (
     <ScrollView
@@ -169,4 +169,4 @@ export function Register() {
       </View>
     </ScrollView>
   );
-}
+};

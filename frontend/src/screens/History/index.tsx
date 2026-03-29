@@ -3,10 +3,10 @@ import { api } from "@services/api";
 
 import { useCallback, useState } from "react";
 import { View, Text, SectionList, Alert } from "react-native";
-import { useFocusEffect } from "@react-navigation/native";
 
 import { AppError } from "@utils/AppError";
 import { HistoryByDayDTO } from "@dtos/HistoryByDayDTO";
+import { useFocusEffect } from "@react-navigation/native";
 
 import { Loading } from "@components/Loading";
 import { HistoryCard } from "@components/HistoryCard";

@@ -1,7 +1,4 @@
-import {
-  BottomTabNavigationProp,
-  createBottomTabNavigator,
-} from "@react-navigation/bottom-tabs";
+import { BottomTabNavigationProp, createBottomTabNavigator, } from "@react-navigation/bottom-tabs";
 
 import { THEME } from "../theme/theme";
 import { Platform } from "react-native";

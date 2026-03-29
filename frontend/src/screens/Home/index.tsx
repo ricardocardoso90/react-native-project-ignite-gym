@@ -32,7 +32,7 @@ export function Home() {
     } catch (error) {
       console.log(error);
     }
-  }
+  };
 
   async function fecthExercisesByGroup() {
     try {
@@ -103,4 +103,4 @@ export function Home() {
       </View>
     </View>
   );
-}
+};

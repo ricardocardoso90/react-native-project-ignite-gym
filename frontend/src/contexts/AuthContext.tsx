@@ -1,16 +1,7 @@
 import { createContext, ReactNode, useEffect, useState } from "react";
 
-import {
-  storageAuthTokenSave,
-  storageAuthTokenGet,
-  storageAuthTokenRemove,
-} from "@storage/storageAuthToken";
-
-import {
-  storageUserGet,
-  storageUserRemove,
-  storageUserSave,
-} from "@storage/storageUser";
+import { storageUserGet, storageUserRemove, storageUserSave, } from "@storage/storageUser";
+import { storageAuthTokenSave, storageAuthTokenGet, storageAuthTokenRemove, } from "@storage/storageAuthToken";
 
 import { api } from "@services/api";
 import { UserDTO } from "@dtos/UserDTO";
