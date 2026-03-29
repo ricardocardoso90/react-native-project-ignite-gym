@@ -1,14 +1,42 @@
+# dependencies
 node_modules/
+
+# Expo
 .expo/
+.expo-shared/
+
+# build
 dist/
+web-build/
+
+# logs
 npm-debug.*
+yarn-debug.log*
+yarn-error.log*
+
+# environment
+.env
+.env.*
+
+# keys / certificados
 *.jks
 *.p8
 *.p12
 *.key
 *.mobileprovision
-*.orig.*
-web-build/
+
+# IDEs
+.idea/
+.vscode/
+
+# Android Studio / IntelliJ
+*.iml
 
 # macOS
 .DS_Store
+
+# Windows
+Thumbs.db
+
+# misc
+*.orig.*
