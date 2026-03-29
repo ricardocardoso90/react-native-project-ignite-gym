@@ -1,4 +1,4 @@
-# 💪 Ignite Gym
+# Ignite Gym
 
 Aplicativo mobile desenvolvido com base nas aulas do professor Rodrigo, da **Rocketseat**, durante o Ignite.
 
@@ -6,22 +6,22 @@ O **Ignite Gym** é um aplicativo voltado para a gestão de treinos em academias
 
 ---
 
-## 📱 Sobre o projeto
+## Sobre o projeto
 
 O app permite que o usuário crie uma conta e tenha seus dados armazenados em um backend gerenciado com o **Beekeeper**.
 
 Dentro da aplicação, é possível:
 
+- Editar informações do perfil
+- Registrar e acompanhar treinos realizados
 - Visualizar uma lista completa de exercícios
 - Acessar detalhes com instruções de execução
-- Registrar e acompanhar treinos realizados
-- Editar informações do perfil
 
 O aplicativo conta também com uma área de histórico, onde o usuário pode acompanhar todos os exercícios já realizados, além de uma página de perfil que permite atualizar dados como foto, nome, e-mail e senha.
 
 ---
 
-## 🚀 Tecnologias
+## Tecnologias
 
 - React Native
 - Expo
@@ -39,7 +39,7 @@ O aplicativo conta também com uma área de histórico, onde o usuário pode aco
 
 ---
 
-## 📲 Funcionalidades
+## Funcionalidades
 
 - 🔐 Autenticação de usuário
 - 📋 Listagem de exercícios por grupo muscular
@@ -47,17 +47,3 @@ O aplicativo conta também com uma área de histórico, onde o usuário pode aco
 - 📊 Histórico de treinos realizados
 - 👤 Edição de perfil (foto, nome, e-mail e senha)
 - 📸 Upload de imagem de perfil
-
----
-
-## 📂 Estrutura do Projeto
-
-```bash id="k1f7qp"
-src/
- ├── assets/        # Imagens e ícones
- ├── components/    # Componentes reutilizáveis
- ├── screens/       # Telas da aplicação
- ├── hooks/         # Hooks customizados
- ├── services/      # Configuração de API
- ├── storage/       # Persistência local
- ├── utils/         # Funções auxiliares
