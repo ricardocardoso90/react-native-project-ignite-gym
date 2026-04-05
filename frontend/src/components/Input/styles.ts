@@ -12,7 +12,7 @@ export const styles = StyleSheet.create({
     color: '#FFFFFF',
     borderRadius: 4,
     borderWidth: 0,
-    backgroundColor: '#323238', 
+    backgroundColor: '#121214', 
     
   },
   inputInvalid: {
